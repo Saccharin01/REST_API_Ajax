@@ -17,6 +17,7 @@ root.style.display ="grid"
 // root.style.gridTemplateColumns = "repeat(6 ,1fr)"
 root.style.gridTemplateRows = "repeat(6, 1fr)"
 root.style.gap = "30px"
+root.style.marginLeft = '13vw'
 // root.style.
 
 
@@ -40,7 +41,7 @@ xhr.addEventListener(`load`, ()=>{
 
     let container = []
     jsonValue.forEach((ele)=>{
-      container.push(tagComponent("li",ele))
+      container.push(tagComponent("p",ele))
     })
     console.log(container)
     
@@ -48,7 +49,7 @@ xhr.addEventListener(`load`, ()=>{
     let divChild = document.querySelectorAll(`#root > div`)
 
     divChild.forEach((ele)=>{
-      ele.innerHTML = tagComponent("ul", container.join(""))
+      ele.innerHTML = container.join("")
     })
   }
 })
