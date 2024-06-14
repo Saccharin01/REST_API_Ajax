@@ -54,10 +54,16 @@ xhr.addEventListener(`load`, ()=>{
       // div.style.alignItems = "center"
     });
     let charSection = document.querySelectorAll(".charSection")
-    
+
+    let charInfo = valueContainer.map((ele)=>{
+      console.log(tagComponent("P",ele.join("")))
+      return tagComponent("P",ele.join(''))
+    })
+    console.dir(charInfo)
     charSection.forEach((ele)=>{
       ele.innerHTML = "p"
     })
+    
     // let container = []
     // jsonValue.forEach((ele)=>{
     //   container.push(tagComponent("p",ele))
