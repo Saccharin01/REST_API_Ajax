@@ -11,9 +11,10 @@ xhr.send()
 
 
 const root = document.getElementById('root')
-root.style.height = '100vh'
-root.style.width = '100vw'
+root.style.height = '110vh'
+root.style.width = '70vw'
 root.style.display ="grid"
+// root.style.gridTemplateColumns = "repeat(6 ,1fr)"
 root.style.gridTemplateRows = "repeat(6, 1fr)"
 root.style.gap = "30px"
 // root.style.
@@ -26,18 +27,28 @@ xhr.addEventListener(`load`, ()=>{
     console.log(Array.isArray(jsondata))
     console.log(jsondata[0])
     console.log(typeof(jsondata[0]))
-    let test = Object.keys(jsondata[0])
-    let test2 = Object.values(jsondata[0])
-    console.log(test)
-    console.log(test2)
+    let jsonKeys = Object.keys(jsondata[0])
+    let jsonValue = Object.values(jsondata[0])
+    console.log(jsonKeys)
+    console.log(jsonValue)
     
     jsondata.forEach((ele) => {
       let div = document.createElement('div')
       root.appendChild(div)
       div.style.backgroundColor = "bisque"
     });
-    let divChild = document.querySelectorAll(`#root > div`)
-    console.log(divChild)
+
     let container = []
+    jsonValue.forEach((ele)=>{
+      container.push(tagComponent("li",ele))
+    })
+    console.log(container)
+    
+
+    let divChild = document.querySelectorAll(`#root > div`)
+
+    divChild.forEach((ele)=>{
+      ele.innerHTML = tagComponent("ul", container.join(""))
+    })
   }
 })
