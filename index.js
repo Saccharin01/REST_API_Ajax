@@ -35,14 +35,12 @@ xhr.addEventListener(`load`, ()=>{
     let jsondata = JSON.parse(xhr.responseText);
     let jsonValue = Object.values(jsondata[0]);
     console.dir(jsondata);
-    let keyContainer = [];
     let valueContainer = [];
     // keyContainer.push()
 
     jsondata.forEach((ele) => {
       let jsonKeys = Object.keys(ele);
       let jsonValue = Object.values(ele);
-      keyContainer.push(jsonKeys);
       valueContainer.push(jsonValue);
       let div = document.createElement("div");
       divTwo.appendChild(div);
@@ -57,14 +55,14 @@ xhr.addEventListener(`load`, ()=>{
     console.log(charSection)
 
     let charInfo = valueContainer.map((ele)=>{
-      return tagComponent("P",ele.join(''))
+      return tagComponent("P",ele)
     })
     console.log(charInfo)
+    for(let i = 0; i<charSection.length; i++){
+      charSection[i].innerHTML = charInfo[i]
+    }
     
-    let seperate = charSection.map((ele)=>{
-      return ele
-    })
-    console.log(seperate)
+   
     
     // let container = []
     // jsonValue.forEach((ele)=>{
