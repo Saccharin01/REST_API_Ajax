@@ -32,14 +32,25 @@ divTwo.style.height = "50%";
 
 xhr.addEventListener(`load`, ()=>{
   if(xhr.status === 200){
-    let jsondata = JSON.parse(xhr.responseText)
-    let jsonKeys = Object.keys(jsondata[0])
-    let jsonValue = Object.values(jsondata[0])
-  
+    let jsondata = JSON.parse(xhr.responseText);
+    let jsonValue = Object.values(jsondata[0]);
+    console.dir(jsondata);
+    let keyContainer = [];
+    let valueContainer = [];
+    // keyContainer.push()
+
     jsondata.forEach((ele) => {
-      let div = document.createElement('div')
-      root.appendChild(div)
-      div.style.backgroundColor = "bisque"
+      let jsonKeys = Object.keys(ele);
+      let jsonValue = Object.values(ele);
+      keyContainer.push(jsonKeys);
+      valueContainer.push(jsonValue);
+      let div = document.createElement("div");
+      divTwo.appendChild(div);
+      div.style.backgroundColor = "bisque";
+      // divTwo.innerHTML = jsonValue
+      // div.style.display = "flex"
+      // div.style.justifyContent = "center"
+      // div.style.alignItems = "center"
     });
 
     // let container = []
