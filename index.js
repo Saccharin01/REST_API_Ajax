@@ -33,23 +33,17 @@ divTwo.style.height = "50%";
 xhr.addEventListener(`load`, ()=>{
   if(xhr.status === 200){
     let jsondata = JSON.parse(xhr.responseText);
-    let jsonValue = Object.values(jsondata[0]);
     console.dir(jsondata);
+
     let valueContainer = [];
-    // keyContainer.push()
 
     jsondata.forEach((ele) => {
-      let jsonKeys = Object.keys(ele);
       let jsonValue = Object.values(ele);
       valueContainer.push(jsonValue);
       let div = document.createElement("div");
       divTwo.appendChild(div);
       div.style.backgroundColor = "bisque";
       div.setAttribute("class", "charSection")
-      // divTwo.innerHTML = jsonValue
-      // div.style.display = "flex"
-      // div.style.justifyContent = "center"
-      // div.style.alignItems = "center"
     });
     let charSection = document.querySelectorAll(".charSection")
     console.log(charSection)
@@ -61,20 +55,8 @@ xhr.addEventListener(`load`, ()=>{
     for(let i = 0; i<charSection.length; i++){
       charSection[i].innerHTML = charInfo[i]
     }
-    
-   
-    
-    // let container = []
-    // jsonValue.forEach((ele)=>{
-    //   container.push(tagComponent("p",ele))
-    // })
-    // console.log(container)
-    
-
-    // let divChild = document.querySelectorAll(`#root > div`)
-
-    // divChild.forEach((ele)=>{
-    //   ele.innerHTML = container.join("")
-    // })
   }
+  if(xhr.status > 399){
+    throw new Error('something happen')
+  }  
 })
