@@ -11,14 +11,23 @@ xhr.setRequestHeader('authorization', `bearer ${apiKey}`);
 xhr.send()
 
 
-const root = document.getElementById('root')
-root.style.height = '110vh'
-root.style.width = '70vw'
-root.style.display ="grid"
-root.style.gridTemplateColumns = "repeat(6 ,1fr)"
-root.style.gridTemplateRows = "repeat(6, 1fr)"
-root.style.gap = "30px"
-root.style.marginLeft = '13vw'
+const root = document.getElementById("root");
+root.style.height = "100vh";
+root.style.width = "70vw";
+root.style.marginLeft = "13vw";
+let divOne = root.appendChild(document.createElement("div"));
+let divTwo = root.appendChild(document.createElement("div"));
+
+divOne.style.height = "40%";
+divOne.style.backgroundColor = "orange";
+divOne.style.marginBottom = "4vh";
+divOne.style.marginTop = "4vh";
+
+divTwo.style.display = "grid";
+divTwo.style.gridTemplateColumns = "repeat(4 ,1fr)";
+divTwo.style.gridTemplateRows = "repeat(4, 1fr)";
+divTwo.style.gap = "30px";
+divTwo.style.height = "50%";
 // root.style.
 
 xhr.addEventListener(`load`, ()=>{
