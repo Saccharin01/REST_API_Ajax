@@ -42,17 +42,17 @@ xhr.addEventListener(`load`, ()=>{
       div.style.backgroundColor = "bisque"
     });
 
-    let container = []
-    jsonValue.forEach((ele)=>{
-      container.push(tagComponent("p",ele))
-    })
-    console.log(container)
+    // let container = []
+    // jsonValue.forEach((ele)=>{
+    //   container.push(tagComponent("p",ele))
+    // })
+    // console.log(container)
     
 
-    let divChild = document.querySelectorAll(`#root > div`)
+    // let divChild = document.querySelectorAll(`#root > div`)
 
-    divChild.forEach((ele)=>{
-      ele.innerHTML = container.join("")
-    })
+    // divChild.forEach((ele)=>{
+    //   ele.innerHTML = container.join("")
+    // })
   }
 })
