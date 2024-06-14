@@ -46,6 +46,8 @@ xhr.addEventListener(`load`, ()=>{
       divTwo.appendChild(div);
       div.style.backgroundColor = "bisque";
       div.setAttribute("class", "charSection")
+      div.style.display = "flex"
+
       // divTwo.innerHTML = jsonValue
       // div.style.display = "flex"
       // div.style.justifyContent = "center"
@@ -55,7 +57,8 @@ xhr.addEventListener(`load`, ()=>{
     console.log(charSection)
 
     let charInfo = valueContainer.map((ele)=>{
-      return tagComponent("P",ele)
+      console.log(ele)
+      return tagComponent("div",ele.join('<br>'))
     })
     console.log(charInfo)
     for(let i = 0; i<charSection.length; i++){
