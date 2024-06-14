@@ -1,4 +1,4 @@
-const tagComponent = function(tagName,textNode){
+const tagComponent = (tagName,textNode)=>{
   return`<${tagName}>${textNode}</${tagName}>`
 }
 

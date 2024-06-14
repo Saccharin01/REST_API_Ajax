@@ -1,4 +1,4 @@
-const htmlTemplate = function htmlTemplate(){
+const htmlTemplate = (content="") => {
   return`<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,7 +7,9 @@ const htmlTemplate = function htmlTemplate(){
 <title>Document</title>
 </head>
 <body>
-<div id="root"></div>
+<div id="root">
+${content}
+</div>
 <script type = "module" src="core.js"></script>
 </body>
 </html>`;
