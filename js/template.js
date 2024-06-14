@@ -10,7 +10,7 @@ const htmlTemplate = (content="") => {
 <div id="root">
 ${content}
 </div>
-<script type = "module" src="core.js"></script>
+<script type = "module" src="script.js"></script>
 </body>
 </html>`;
 }
