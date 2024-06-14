@@ -47,11 +47,14 @@ xhr.addEventListener(`load`, ()=>{
       let div = document.createElement("div");
       divTwo.appendChild(div);
       div.style.backgroundColor = "bisque";
+      div.setAttribute("class", "charSection")
       // divTwo.innerHTML = jsonValue
       // div.style.display = "flex"
       // div.style.justifyContent = "center"
       // div.style.alignItems = "center"
     });
+    let charSection = document.querySelectorAll(".charSection")
+    console.log(charSection)
 
     // let container = []
     // jsonValue.forEach((ele)=>{
